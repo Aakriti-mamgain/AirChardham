@@ -8,6 +8,7 @@ import img2 from "../assets/images/Yamunotri-Cottages.jpg";
 import img3 from "../assets/images/Harsil-Village-Resort.jpg";
 import img4 from "../assets/images/Char-Machan-Resort.jpg";
 import img5 from "../assets/images/Lord-palace.jpg";
+import { Link } from "react-router-dom";
 
 const hotelsData = [
   { name: "Dehradun hotels", image: img1, details: ["Hyatt Regency", "Hyatt Centric", "Fairfield Marriott", "County Inn"] },
@@ -58,9 +59,11 @@ const HotelsSection = () => {
                   <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">
                     View Details
                   </button>
-                  <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition">
-                    Book Now
-                  </button>
+                  <Link to="/contact-us">
+                    <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition">
+                      Book Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
