@@ -9,6 +9,7 @@ import img3 from "../assets/images/MI17-image.jpg";
 import img4 from "../assets/images/H135-Twin-Engine.jpg";
 import img5 from "../assets/images/fixed-Wing-Aircraft-image.jpg";
 import img6 from "../assets/images/Agusta-119.jpg";
+import { Link } from "react-router-dom";
 
 const fleets = [
   {
@@ -127,12 +128,16 @@ const FleetSection = () => {
 
                   {/* Buttons */}
                   <div className="flex flex-wrap justify-center gap-2 mt-4">
+                  <Link to="/fleet">
                     <button className="px-4 py-2 bg-gradient-to-r from-red-600 to-blue-500 text-white font-bold rounded-lg text-sm md:text-base w-full sm:w-auto">
                       Read More
                     </button>
+                    </Link>
+                    <Link to="/contact-us">
                     <button className="px-4 py-2 bg-gradient-to-r from-red-600 to-blue-500 text-white font-bold rounded-lg text-sm md:text-base w-full sm:w-auto">
                       Book Now
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>
