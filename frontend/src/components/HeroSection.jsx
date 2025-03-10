@@ -17,7 +17,7 @@ const HeroSection = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  },);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -29,6 +29,10 @@ const HeroSection = () => {
 
   const toggleFleet = () => {
     setIsFleetOpen(!isFleetOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -80,7 +84,7 @@ const HeroSection = () => {
               { name: "Helicopter Safety Rules", path: "/safety-rules" },
             ].map((item, index) => (
               <li key={index}>
-                <Link to={item.path} className="text-base font-medium px-4 py-2 hover:text-red-500 transition">
+                <Link to={item.path} className="text-base font-medium px-4 py-2 hover:text-red-500 transition" onClick={closeMobileMenu}> {/* Added onClick handler */}
                   {item.name}
                 </Link>
               </li>
@@ -95,7 +99,7 @@ const HeroSection = () => {
                 Chardham Heli Packages <FaChevronDown className="ml-1" />
               </span>
               {isDropdownOpen && (
-                <ul className="absolute left-0 top-full mt-1 bg-white text-black w-44 rounded-lg shadow-lg">
+                <ul className="absolute left-0 top-full mt-1 bg-white text-black w-44 rounded-lg shadow-lg z-10"> {/* Added z-index */}
                   {[
                     { name: "Char Dham Yatra", path: "/chardham" },
                     { name: "Do Dham Yatra", path: "/dodham" },
@@ -103,7 +107,7 @@ const HeroSection = () => {
                     { name: "Do Dham Yatra by Heli Ex Phata", path: "/sameday-kedarnath" },
                   ].map((item, index) => (
                     <li key={index}>
-                      <Link to={item.path} className="block px-4 py-2 hover:bg-gray-200">
+                      <Link to={item.path} className="block px-4 py-2 hover:bg-gray-200" onClick={closeMobileMenu}> {/* Added onClick handler */}
                         {item.name}
                       </Link>
                     </li>
@@ -112,7 +116,7 @@ const HeroSection = () => {
               )}
             </li>
             <li>
-              <Link to="/fleet" className="flex items-center text-base font-medium px-4 py-2 cursor-pointer hover:text-red-500 transition">
+              <Link to="/fleet" className="flex items-center text-base font-medium px-4 py-2 cursor-pointer hover:text-red-500 transition" onClick={closeMobileMenu}> {/* Added onClick handler */}
                 Our Fleet
               </Link>
             </li>
@@ -125,7 +129,7 @@ const HeroSection = () => {
                 Our Heli Services <FaChevronDown className="ml-1" />
               </span>
               {isFleetOpen && (
-                <ul className="absolute left-0 top-full mt-1 bg-white text-black w-44 rounded-lg shadow-lg">
+                <ul className="absolute left-0 top-full mt-1 bg-white text-black w-44 rounded-lg shadow-lg z-10"> {/* Added z-index */}
                   {[
                     { name: "Heli Skiing", path: "/heli-skiing" },
                     { name: "air Ambulance", path: "/air-aimbulance" },
@@ -136,7 +140,7 @@ const HeroSection = () => {
                     { name: "Fixed Wing Charters", path: "/charter" },
                   ].map((item, index) => (
                     <li key={index}>
-                      <Link to={item.path} className="block px-4 py-2 hover:bg-gray-200">
+                      <Link to={item.path} className="block px-4 py-2 hover:bg-gray-200" onClick={closeMobileMenu}> {/* Added onClick handler */}
                         {item.name}
                       </Link>
                     </li>
@@ -147,7 +151,7 @@ const HeroSection = () => {
             {/* Contact Button */}
             <li className="md:hidden">
               <Link to="/contact-us">
-                <button className="bg-gradient-to-r from-red-600 to-blue-500 px-5 py-2 rounded-full font-semibold transition-transform duration-300 hover:scale-110 text-white">
+                <button className="bg-gradient-to-r from-red-600 to-blue-500 px-5 py-2 rounded-full font-semibold transition-transform duration-300 hover:scale-110 text-white" onClick={closeMobileMenu}> {/* Added onClick handler */}
                   Contact
                 </button>
               </Link>
@@ -176,4 +180,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection
+export default HeroSection;
