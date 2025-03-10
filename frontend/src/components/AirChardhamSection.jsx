@@ -23,7 +23,7 @@ const AirChardhamSection = () => {
             We started our operations in March 1997 as a local tour operator and have grown into a leading and trusted brand for travel helicopter services.
           </p>
           
-          <Link to="/contact">
+          <Link to="/contact-us">
             <button className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition duration-300 ease-in-out">
               Contact Now
             </button>
